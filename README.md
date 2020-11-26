@@ -1,1 +1,1 @@
-# voter-data-project
+# Voter Data Project
