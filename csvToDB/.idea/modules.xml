@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CSVToDB (1).iml" filepath="$PROJECT_DIR$/CSVToDB (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/classes/META-INF/maven/CSVToDB/CSVToDB/CSVToDB (2).iml" filepath="$PROJECT_DIR$/target/classes/META-INF/maven/CSVToDB/CSVToDB/CSVToDB (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/classes/META-INF/maven/CSVToDB/CSVToDB/CSVToDB (3).iml" filepath="$PROJECT_DIR$/target/classes/META-INF/maven/CSVToDB/CSVToDB/CSVToDB (3).iml" />
+    </modules>
+  </component>
+</project>
