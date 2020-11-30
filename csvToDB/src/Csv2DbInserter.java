@@ -14,25 +14,36 @@ public class Csv2DbInserter {
         String url = "jdbc:mysql://localhost:3306/voter_data?serverTimezone=UTC";
         String username = System.getenv("SQL_USERNAME");
         String password = System.getenv("SQL_PASSWORD");
-        String filepathCsv = "/EXT3.csv";
-        CTcsvToDB(url, username, password, filepathCsv);
+        //CT insert to csv
+        for(int i = 1; i <= 4; i++) {
+            String filepathCsv = "/Users/william/Documents/other/voter-data/CT-download/extracted-data/EXT" + i + ".csv";
+            CTcsvToDB(url, username, password, filepathCsv);
+        }
     }
 
     //insert csv data from CT into voter data database
     public static void CTcsvToDB(String jdbcURL, String sqlUsername,
                                  String sqlPassword, String csvFilepath) {
         //setup starting variables
-        final int BATCH_SIZE = 20;
-        final int NUM_COMMAS = 43;
+        final int BATCH_SIZE = 15;
+        final int NUM_COMMAS = 44;
         Connection connection = null;
+        //DATE OF BIRTH
+        //PHONE NUMBER
+        //PARTY CODE
+        //UNQUALIFIED PARTIES
+        //GENDER
+        //REGISTATION DATE
         final String[] sqlFields = { "town_id", "voter_id", "last_name", "first_name",
                 "middle_name", "name_prefix", "name_suffix", "cd_status_code",
                 "cd_off_reason", "voting_district", "voting_precinct", "state_congress_code",
                 "state_senate_code", "state_assembly_code", "address_number", "address_unit",
-                "street_name", "town_name", "state", "zip5", "zip4", "election_history" };
+                "street_name", "town_name", "state", "zip5", "zip4", "dob", "phone_number",
+                "party_code", "unqualified_party_code", "gender", "registration_date",
+                "election_history" };
         //csv column num that coorelate to sqlFields (i.e. town_id is the first column in the csv)
         final int[] csvFields = {1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15,  21, 22, 23,
-                24, 25, 26, 27, 43};
+                24, 25, 26, 27, 38, 39, 40, 41, 42, 43, 44};
         try {
             long start = System.currentTimeMillis();
 
@@ -76,7 +87,7 @@ public class Csv2DbInserter {
                 for(int i : csvFields)
                 {
                     //since csvColumns is 0th indexed and csvFields is 1st indexed, use i - 1
-                    statement.setString(fieldCount, csvColumns[i - 1]);
+                    statement.setString(fieldCount, csvColumns[i - 1].trim());
                     fieldCount++;
                 }
                 statement.addBatch();
@@ -84,11 +95,13 @@ public class Csv2DbInserter {
                 if (count % BATCH_SIZE == 0) {
 
                     statement.executeBatch();
-                    if (count % 10000 == 0) {
-                        System.out.println("Current count:" + count);
-                    }
+                }
+                if(count % 10000 == 0)
+                {
+                    System.out.print('\r' + "count: " + count);
                 }
             }
+            System.out.println();
             System.out.println("Final count:" + count);
 
             br.close();
