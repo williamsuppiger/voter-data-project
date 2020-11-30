@@ -9,7 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Csv2DbInserter {
-    //modified from: https://www.codejava.net/coding/java-code-example-to-insert-data-from-csv-to-database
 
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/voter_data?serverTimezone=UTC";
