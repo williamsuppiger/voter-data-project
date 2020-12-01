@@ -9,12 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /*
- * Functions for translating raw data to MySql database
+ * All methods and data manipulation related to Connecticut
+ * (add State super class later for cleaner design)
  */
-public class RawToDB {
+public class CT {
     //insert csv data from CT into voter_data.ct_raw schema
-    public static void CT(String jdbcURL, String sqlUsername,
-                          String sqlPassword, String csvFilepath) {
+    public static void RawToDB(String jdbcURL, String sqlUsername,
+                               String sqlPassword, String csvFilepath) {
         //setup starting variables
         final int BATCH_SIZE = 15;
         final int NUM_COMMAS = 44;
@@ -110,5 +111,6 @@ public class RawToDB {
             }
         }
     }
+
 
 }
