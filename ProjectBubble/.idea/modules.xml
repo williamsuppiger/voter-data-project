@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CSVToDB.iml" filepath="$PROJECT_DIR$/CSVToDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectBubble.iml" filepath="$PROJECT_DIR$/ProjectBubble.iml" />
     </modules>
   </component>
 </project>

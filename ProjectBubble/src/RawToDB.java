@@ -8,32 +8,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class Csv2DbInserter {
-
-    public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/voter_data?serverTimezone=UTC";
-        String username = System.getenv("SQL_USERNAME");
-        String password = System.getenv("SQL_PASSWORD");
-        //CT insert to csv
-        for(int i = 1; i <= 4; i++) {
-            String filepathCsv = "/Users/william/Documents/other/voter-data/CT-download/extracted-data/EXT" + i + ".csv";
-            CTcsvToDB(url, username, password, filepathCsv);
-        }
-    }
-
-    //insert csv data from CT into voter data database
-    public static void CTcsvToDB(String jdbcURL, String sqlUsername,
-                                 String sqlPassword, String csvFilepath) {
+/*
+ * Functions for translating raw data to MySql database
+ */
+public class RawToDB {
+    //insert csv data from CT into voter_data.ct_raw schema
+    public static void CT(String jdbcURL, String sqlUsername,
+                          String sqlPassword, String csvFilepath) {
         //setup starting variables
         final int BATCH_SIZE = 15;
         final int NUM_COMMAS = 44;
         Connection connection = null;
-        //DATE OF BIRTH
-        //PHONE NUMBER
-        //PARTY CODE
-        //UNQUALIFIED PARTIES
-        //GENDER
-        //REGISTATION DATE
         final String[] sqlFields = { "town_id", "voter_id", "last_name", "first_name",
                 "middle_name", "name_prefix", "name_suffix", "cd_status_code",
                 "cd_off_reason", "voting_district", "voting_precinct", "state_congress_code",

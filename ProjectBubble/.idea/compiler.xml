@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="CSVToDB" />
+        <module name="ProjectBubble" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CSVToDB" target="14" />
       <module name="CSVToDB (2)" target="1.5" />
       <module name="CSVToDB (3)" target="14" />
+      <module name="ProjectBubble" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>
