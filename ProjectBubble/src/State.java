@@ -14,8 +14,8 @@ public abstract class State {
         this.sqlPassword = sqlPassword;
     }
 
-    public static void RawToDB(String filepath){};
-    public static void GeoLookup(){};
-    public static void GeoToDB(){};
+    public static void extractRaw(String filepath){};
+    public static void lookupCoords(){};
+    public static void extractGeo(){};
 
 }

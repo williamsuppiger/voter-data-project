@@ -13,10 +13,11 @@ public class Main {
         if(commands.contains("insert-raw-CT")) {
             for (int i = 1; i <= 4; i++) {
                 String filepathCsv = "/Users/william/Documents/other/voter-data/CT-download/extracted-data/EXT" + i + ".csv";
-                CT.RawToDB(SQL_URL, SQL_USERNAME, SQL_PASSWORD, filepathCsv);
+                CT.extractRaw(SQL_URL, SQL_USERNAME, SQL_PASSWORD, filepathCsv);
             }
         }
 
+        //CT.getCoordsCensus(SQL_URL, SQL_USERNAME, SQL_PASSWORD, "CT");
     }
 
     //interpret commandline args (for CLI implementation later)
