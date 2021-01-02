@@ -17,7 +17,7 @@ public class Main {
             }
         }
 
-        //CT.getCoordsCensus(SQL_URL, SQL_USERNAME, SQL_PASSWORD, "CT");
+        CT.getCoordsGeocodio(SQL_URL, SQL_USERNAME, SQL_PASSWORD, "CT");
     }
 
     //interpret commandline args (for CLI implementation later)
