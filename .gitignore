@@ -23,5 +23,8 @@
 hs_err_pid*
 /.metadata/
 
+#vscode
+.vscode
+
 #testing files
 geoLookup/testing
