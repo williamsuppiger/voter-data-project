@@ -5,9 +5,12 @@ from flaskext.mysql import MySQL
 from mysql.connector import Error
 import json
 import os
+from flask_cors import CORS
 
 # Flask api setup
 app = Flask(__name__)
+#remove cross orgin requests for non-testing
+CORS(app)
 mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = os.getenv('SQL_USERNAME')
 app.config['MYSQL_DATABASE_PASSWORD'] = os.getenv('SQL_PASSWORD')
