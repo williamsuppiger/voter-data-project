@@ -1,0 +1,176 @@
+.slidecontainer {
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* The slider itself */
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 25px;
+    /* Specified height */
+    background: #d3d3d3;
+    /* Grey background */
+    outline: none;
+    /* Remove outline */
+    opacity: 0.7;
+    /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+
+/* Mouse-over effects */
+
+.slider:hover {
+    opacity: 1;
+    /* Fully shown on mouse-over */
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #262626;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: grey;
+    cursor: pointer;
+}
+
+.section {
+    padding: 10px;
+    height: 100%;
+}
+
+.section-title {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.people-container {
+    height: 60vh;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 20px;
+    /* border: solid #262626 2px; */
+    border-radius: 2vw;
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.person-container {
+    height: 12vh;
+    background-color: lightgray;
+    /* border-color: darkgrey; */
+    border-radius: 1.8vw;
+    overflow: hidden;
+    margin-bottom: 1px;
+}
+
+.person-container:hover {
+    cursor: pointer;
+}
+
+.person-container.republican {
+    background-color: lightcoral;
+    /* border: solid darkred 1px; */
+}
+
+.person-container.democrat {
+    background-color: lightblue;
+    /* border: solid darkblue 1px; */
+}
+
+.person-container>span {
+    line-height: 12vh;
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+.person-container .name {
+    float: left;
+    padding-left: 1vw;
+}
+
+.person-container .dob {
+    float: right;
+    padding-right: 1vw;
+}
+
+#cover-spin {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 9999;
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#cover-spin::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 48%;
+    top: 40%;
+    width: 40px;
+    height: 40px;
+    border-style: solid;
+    border-color: black;
+    border-top-color: transparent;
+    border-width: 4px;
+    border-radius: 50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+
+#map {
+    height: 100%;
+}
+
+.map-wrapper {
+    height: 60vh;
+}

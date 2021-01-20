@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CT Bubble Information</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/state.css">
+
+    <!-- JS -->
+    <script src="./js/library/jquery-3.5.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body class="background-marbel">
+    <div id="cover-spin"></div>
+    <!-- <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="10" class="slider" id="myRange">
+    </div> -->
+    <div>
+        <div class="col-md-8 col-sm-12 map-wrapper">
+            <h2 class="section-title">My Bubble</h2>
+            <div id="map"></div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <h2 class="section-title">People</h2>
+            <div class="people-container">
+            </div>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyy_3cKwSNKArwJ0m0h3jE_b4Nng4-Kfk&callback=initMap&libraries=&v=beta&map_ids=ab3ad70c84b8f9ff" async defer></script>
+    <script src="js/ct.js"></script>
+</body>
+
+</html>

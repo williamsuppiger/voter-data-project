@@ -19,12 +19,9 @@ body {
     display: none
 }
 
-.background {
-    /* The image used */
+.background-water {
     background-image: url("/images/light-marble.jpg");
-    /* Full height */
     height: 100%;
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,4 +30,11 @@ body {
     z-index: -1;
     left: 0px;
     top: 0px;
+}
+
+.background-marbel {
+    background-image: url("/images/light-marble.jpg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
 }
