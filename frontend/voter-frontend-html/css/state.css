@@ -1,3 +1,7 @@
+.back {
+    padding: 5px;
+}
+
 .slidecontainer {
     width: 100%;
     padding: 20px;
@@ -174,3 +178,75 @@
 .map-wrapper {
     height: 60vh;
 }
+
+@media screen and (max-width: 992px) {
+    .map-wrapper {
+        margin-bottom: 70px;
+    }
+}
+
+.stats-section {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+
+/* Popup box BEGIN */
+
+.popup_person_modal {
+    background: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.popup_person_modal.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.popup_modal>div {
+    background-color: #fff;
+    box-shadow: 10px 10px 60px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 551px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+    margin-top: 10vh;
+}
+
+.popupCloseButton {
+    background-color: #fff;
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.popupCloseButton:hover {
+    background-color: #ccc;
+}
+
+
+/* Popup box END */

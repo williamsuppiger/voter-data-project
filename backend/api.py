@@ -27,7 +27,7 @@ class GeoClosest(Resource):
 			# parse and validate parameters
 			parser = reqparse.RequestParser()
 			parser.add_argument('twoParty', type=bool, default=False, required=False)
-			parser.add_argument('maxRadius', type=int, default=5, required=False)
+			parser.add_argument('maxRadius', type=int, default=3, required=False)
 			parser.add_argument('latlng', type=str, required=True, help='latlng parameter is required')
 			args = parser.parse_args()
 			if not (0 <= args["maxRadius"] <= 10):

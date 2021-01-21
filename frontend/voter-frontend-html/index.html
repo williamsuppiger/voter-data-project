@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project Bubble</title>
+    <!--Favicon-->
+    <link rel="icon" href="/images/icon.png">
+
     <!-- CSS -->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,7 +21,6 @@
     <script src="./js/library/jquery.geocomplete.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js"></script>
-
 </head>
 
 <body class="background-marbel">
@@ -28,11 +30,11 @@
         <h1 class="headline-title">
             Connecticut Bubble
         </h1>
-        <input id="geocomplete" type="text" placeholder="Type in an address" size="80" />
+        <input id="geocomplete" type="text" placeholder="Type in a Connecticut address" size="80" />
     </form>
     <div class="details" style="display: none;">
-        <span data-geo="lat"> </span>
-        <span data-geo="lng"> </span>
+        <span data-geo="lat" id="lat"> </span>
+        <span data-geo="lng" id="lng"> </span>
     </div>
     <script>
         $(document).ready(function() {
@@ -45,10 +47,15 @@
                 $('.error').show().text(e);
             }
         });
-        $("input#geocomplete").geocomplete({
-            details: ".details",
-            detailsAttribute: "data-geo"
-        });
+        $("input#geocomplete").geocomplete()
+            .bind("geocode:result", function(event, result) {
+                let place = result.geometry.location.toJSON();
+                sendToCT(place.lat, place.lng);
+            });
+
+        function sendToCT(lat, lng) {
+            window.location.href = "/ct.html?latlng=" + lat + "," + lng;
+        }
     </script>
 </body>
 

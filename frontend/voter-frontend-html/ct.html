@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CT Bubble Information</title>
+    <!--Favicon-->
+    <link rel="icon" href="/images/icon.png">
+
     <!-- CSS -->
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,17 +22,59 @@
 
 <body class="background-marbel">
     <div id="cover-spin"></div>
-    <!-- <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="10" class="slider" id="myRange">
-    </div> -->
+    <div class="popup_modal popup_person_modal">
+        <span class="helper"></span>
+        <div class="text-left info_modal_text">
+            <!--start close button hidden until all data is loaded-->
+            <div class="popupCloseButton" id="instructions-close" onclick="closeModal()" style="display:none">&times;</div>
+            <h2 class="section-title">Overview</h2>
+            <p>The map contains a <i>bubble</i> shaded with the political party of everyone within the current radius of the circle. To change the size of the <i>bubble</i> scroll up and down the list of people. The people are sorted by how close they are
+                to the given address and their age is displayed next to their first name and last initial. To see more information about a person, click on them. To see information about the current <i>bubble</i>, check the section titled "Current Stats".
+            </p>
+        </div>
+        <div class="text-left person_modal_text" style="display:none">
+            <div class="popupCloseButton" onclick="closeModal()">&times;</div>
+            <h2 class="section-title"><span id="p_full_name"></span></h2>
+            <p>Gender: <span id="p_gender"></span></p>
+            <p>Date of Birth: <span id="p_dob"></span></p>
+            <p>Address: <span id="p_address"></span></p>
+            <!-- address_number street_name, town_name, state zip5 -->
+            <p>Phone Number: <span id="p_phone_number"></span></p>
+            <p>Party Code: <span id="p_party_code"></span></p>
+            <p>Registration Date: <span id="p_registration_date"></span></p>
+            <p>Voter Id: <span id="p_voter_id"></span></p>
+            <p>Voting District: <span id="p_voting_district"></span></p>
+            <p>Voting Precinct: <span id="p_voting_precinct"></span></p>
+            <p>Elections Voted In (before Nov. 2020): <span id="p_election_history"></span></p>
+            <!-- election_history split up and only shows dates-->
+        </div>
+    </div>
     <div>
+        <div class="text-left back">
+            <a href="/">back home</a>
+        </div>
         <div class="col-md-8 col-sm-12 map-wrapper">
-            <h2 class="section-title">My Bubble</h2>
+            <h2 class="section-title">Bubble Map</h2>
             <div id="map"></div>
         </div>
         <div class="col-md-4 col-sm-12">
-            <h2 class="section-title">People</h2>
+            <h2 class="section-title">People in bubble</h2>
             <div class="people-container">
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="stats-section">
+                <h2 class="section-title text-left">Current Stats</h2>
+                <div class="col-sm-6">
+                    <p>Person Count: <span id="currentCount">0</span></p>
+                    <p>Radius (miles): <span id="currentRadius">0</span></p>
+                    <p>Average Age: <span id="averageAge">0</span></p>
+                </div>
+                <div class="col-sm-6">
+                    <p>Republicans: <span id="repCount">0</span></p>
+                    <p>Democrats: <span id="demCount">0</span></p>
+                    <p>Independents/Other: <span id="independentCount">0</span></p>
+                </div>
             </div>
         </div>
     </div>
