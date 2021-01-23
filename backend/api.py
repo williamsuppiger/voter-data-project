@@ -1,11 +1,14 @@
+import os
+import sys
 from flask import Flask, request, jsonify, abort
 from flask_restful import Resource, Api, reqparse
 import mysql.connector
 from flaskext.mysql import MySQL
 from mysql.connector import Error
 import json
-import os
 from flask_cors import CORS
+
+sys.path.insert(0, os.path.dirname(__file__))
 
 # Flask api setup
 app = Flask(__name__)
@@ -86,18 +89,4 @@ def query_to_json(query):
 	return rows
 
 if __name__ == '__main__':
-	app.run(debug=True)
-
-# notes for later
-# from flask import Flask
-# from flask_restful import Api
-# from myapi.resources.foo import Foo
-# from myapi.resources.bar import Bar
-# from myapi.resources.baz import Baz
-
-# app = Flask(__name__)
-# api = Api(app)
-
-# api.add_resource(Foo, '/Foo', '/Foo/<string:id>')
-# api.add_resource(Bar, '/Bar', '/Bar/<string:id>')
-# api.add_resource(Baz, '/Baz', '/Baz/<string:id>')
+	app.run()

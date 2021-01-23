@@ -99,7 +99,7 @@ $('.people-container').scroll(function() {
             $('#demCount').text(dems);
             $('#independentCount').text(other);
         }
-    }, 250));
+    }, 50));
 });
 
 function getUrlParameter(sParam) {
